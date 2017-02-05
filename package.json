@@ -1,0 +1,45 @@
+{
+  "name": "unit-test-websockets",
+  "version": "1.0.0",
+  "description": "Example code to show how to test WebSockets on client and server",
+  "main": "index.js",
+  "scripts": {
+    "start": "node .",
+    "lint": "eslint server client test",
+    "precommit": "npm run lint",
+    "prepush": "npm run lint && npm run test",
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarcL/unit-test-websockets.git"
+  },
+  "keywords": [
+    "unit",
+    "test",
+    "websockets"
+  ],
+  "author": "Marc Littlemore <marc.littlemore@gmail.com> (http://www.marclittlemore.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MarcL/unit-test-websockets/issues"
+  },
+  "homepage": "https://github.com/MarcL/unit-test-websockets#readme",
+  "devDependencies": {
+    "babel-preset-env": "~1.1.8",
+    "chai": "~3.5.0",
+    "eslint": "~3.14.1",
+    "eslint-config-airbnb-base": "~11.0.1",
+    "eslint-plugin-import": "~2.2.0",
+    "husky": "~0.13.1",
+    "mocha": "~3.2.0",
+    "proxyquire": "~1.7.11",
+    "sinon": "~1.17.7",
+    "sinon-chai": "~2.8.0"
+  },
+  "dependencies": {
+    "babel-register": "~6.22.0",
+    "express": "~4.14.1",
+    "socket.io": "~1.7.2"
+  }
+}
