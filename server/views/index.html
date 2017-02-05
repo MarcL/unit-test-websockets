@@ -23,14 +23,21 @@
     <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
     <script>
         var socket = io();
+
+        function sendMessageToServer(message) {
+          socket.emit('clientMessage', message);
+        }
+
+        function receiveMessageFromServer(message) {
+          $('#messages').append($('<li>').text(message));
+        }
+
         $('form').submit(function(){
-          socket.emit('clientMessage', $('#m').val());
+          sendMessageToServer($('#m').val());
           $('#m').val('');
           return false;
         });
-        socket.on('serverMessage', function(msg){
-          $('#messages').append($('<li>').text(msg));
-        });
-        </script>
+        socket.on('serverMessage', receiveMessageFromServer);
+    </script>
   </body>
 </html>

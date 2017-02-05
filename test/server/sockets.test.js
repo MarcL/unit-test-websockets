@@ -1,5 +1,3 @@
-// import sockets from '../../server/sockets';
-// import * as socketio from 'socket.io';
 import proxyquire from 'proxyquire';
 import EventEmitter from 'events';
 

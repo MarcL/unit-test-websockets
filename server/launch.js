@@ -1,5 +1,4 @@
 import express from 'express';
-// import socketio from 'socket.io';
 import homepage from './middleware/homepage';
 import sockets from './sockets';
 
@@ -9,6 +8,7 @@ function setupRoutes(application) {
 
 function start(port = 7080) {
     const application = express();
+    application.use(express.static('public'));
 
     setupRoutes(application);
 
